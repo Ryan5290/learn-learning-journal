@@ -7,15 +7,31 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.5;
+}
+
+body {
     font-family: "Roboto", sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "head"
+        "main"
+        "foot";
 }
 
 /* Header */
 header {
+    grid-area: head;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em 2em;
+}
+
+.logo {
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.5rem;
 }
 
 .icon {
@@ -29,7 +45,7 @@ header {
     margin: auto 0;
 }
 
-.icon, nav a {
+.logo, nav a {
     text-decoration: none;
 }
 
@@ -46,4 +62,54 @@ nav li {
 nav a:hover,
 nav a:focus-visible {
     text-decoration: underline;
+}
+
+
+/* Main */
+
+main {
+    grid-area: main;
+}
+
+.hero {
+    background-image: url('../images/main.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 20rem;
+    color: #fff;
+    padding: 1em;
+}
+
+.card {
+    padding: 1em;
+}
+
+.card img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/* Footer */
+footer {
+    grid-area: foot;
+    text-align: center;
+    background-color: #202020;
+    padding: 1em;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.foot-title {
+    color: #ECECEC;
+}
+
+.foot-copy {
+    color: #D7D7D7;
 }
